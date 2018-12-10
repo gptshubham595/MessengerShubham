@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "159883136637",
+    "firebase_url": "https://myapplication2-b11de.firebaseio.com",
+    "project_id": "myapplication2-b11de",
+    "storage_bucket": "myapplication2-b11de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159883136637:android:457c1115a5b1da62",
+        "android_client_info": {
+          "package_name": "com.shubham.ggps.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159883136637-o5ajqtu3rfl5u8jac67rrcakk19632qb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shubham.ggps.myapplication",
+            "certificate_hash": "45b3a2b89b7b74987888476ceb6ea575120d122e"
+          }
+        },
+        {
+          "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOIOp4BRbh520oYPQsmecMETkGCoQru_A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

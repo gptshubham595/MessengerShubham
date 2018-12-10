@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/gold"
+    android:layout_height="match_parent"
+    tools:context="droidmentor.tabwithviewpager.ProfileActivity">
+<ImageView
+    android:padding="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="280dp"
+    android:src="@drawable/user"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/profile_visit_userprofile"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:id="@+id/profile_visit_username"
+        android:textSize="30sp"
+        android:layout_marginTop="280dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:typeface="serif"
+        android:textSize="20sp"
+        android:id="@+id/profile_visit_userstatus"
+        android:layout_marginTop="350dp"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp"
+        android:text="Send Request"
+        android:id="@+id/profile_visit_send_request"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:background="@drawable/shape3"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="510dp"
+        android:text="Decline Request"
+        android:id="@+id/profile_visit_decline"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:background="@drawable/shape3"
+        />
+</RelativeLayout>

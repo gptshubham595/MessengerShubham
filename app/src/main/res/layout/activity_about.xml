@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gold"
+    tools:context="droidmentor.tabwithviewpager.About">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/shubham"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shubham Gupta"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="30dp"
+        android:layout_marginTop="220dp"
+        android:layout_centerHorizontal="true"
+        android:typeface="serif"
+        android:textStyle="bold|italic"
+        android:id="@+id/username"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="( Developer )"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="20dp"
+        android:layout_marginTop="270dp"
+        android:layout_centerHorizontal="true"
+        android:typeface="serif"
+        android:textStyle="bold|italic"
+        android:id="@+id/userstatus"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanks for downloading"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="28dp"
+        android:layout_marginTop="380dp"
+        android:layout_centerHorizontal="true"
+        android:typeface="serif"
+        android:textStyle="bold|italic"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="my app !!"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="28dp"
+        android:layout_marginTop="420dp"
+        android:layout_centerHorizontal="true"
+        android:typeface="serif"
+        android:textStyle="bold|italic"
+        />
+
+</RelativeLayout>
