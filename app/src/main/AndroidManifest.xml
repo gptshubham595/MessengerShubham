@@ -34,6 +34,10 @@
         <activity
             android:label="About"
             android:name=".About" />
+
+        <activity
+            android:label="Forgot_Password"
+            android:name=".ForgotPassword" />
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".StartActivity" />

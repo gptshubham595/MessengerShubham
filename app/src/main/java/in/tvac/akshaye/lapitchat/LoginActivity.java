@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout mLoginPassword;
 
     private Button mLogin_btn;
-
+    private Button forgot;
     private ProgressDialog mLoginProgress;
 
     private FirebaseAuth mAuth;
@@ -58,7 +58,15 @@ public class LoginActivity extends AppCompatActivity {
         mLoginEmail = (TextInputLayout) findViewById(R.id.login_email);
         mLoginPassword = (TextInputLayout) findViewById(R.id.login_password);
         mLogin_btn = (Button) findViewById(R.id.login_btn);
+        forgot=findViewById(R.id.forgotbtn);
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a=new Intent(getApplicationContext(),ForgotPassword.class);
+                startActivity(a);
 
+            }
+        });
         mLogin_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,10 +110,11 @@ public class LoginActivity extends AppCompatActivity {
                     mUserDatabase.child(current_user_id).child("device_token").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-
+                        if(mAuth.getCurrentUser().isEmailVerified()){
                             Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
                             mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(mainIntent);
+                        }else{Toast.makeText(getApplicationContext(),"Please Verify Email or enter correct details",Toast.LENGTH_SHORT).show();}
                             finish();
 
 

@@ -109,7 +109,48 @@ public class RequestsFragment extends Fragment {
 
                                 viewHolder.setSUserName(userName);
                                 viewHolder.setUserStatus(userStatus);
-                                viewHolder.setThumbImage(userThumb,getContext());}
+                                viewHolder.setThumbImage(userThumb,getContext());  viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        CharSequence options[] = new CharSequence[]{ "Cancel Friend Request"};
+
+                                        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+                                        builder.setTitle("Friend Options");
+                                        builder.setItems(options, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                                //Click Event for each item.
+
+                                                if(i == 0){
+                                                    mfriendsreqDatabase.child(mCurrent_user_id).child(list_user_id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if(task.isSuccessful()){
+                                                                mfriendsreqDatabase.child(list_user_id).child(mCurrent_user_id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                                        if(task.isSuccessful())
+                                                                        {Toast.makeText(getContext(),"Friend Request Deleted",Toast.LENGTH_SHORT).show();
+
+                                                                        }
+                                                                    }
+                                                                });
+                                                            }
+                                                        }
+                                                    });
+
+                                                }
+
+                                            }
+                                        });
+
+                                        builder.show();
+                                    }
+                                });
+                            }
+
                             @Override
                             public void onCancelled(DatabaseError databaseError) {
 
