@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="#ffffff"    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gold"
-    tools:context="droidmentor.tabwithviewpager.Status">
-<EditText
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="100dp"
-    android:textSize="40dp"
-    android:padding="10dp"
-    android:hint="  Enter Status Here  "
-    android:textColor="@color/colorTextPrimary"
-    android:background="@drawable/shape3"
-    android:inputType="textMultiLine"
-    android:id="@+id/statusnew"
-    />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:background="@drawable/shape2"
-        android:text="CHANGE STATUS"
-        android:typeface="serif"
-        android:textColor="#ffffff"
-        android:padding="8dp"
+    tools:context="in.tvac.akshaye.lapitchat.StatusActivity">
+
+    <include
+        android:id="@+id/status_appBar"
+        layout="@layout/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/status_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/status_appBar"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape4"
+            android:textStyle="italic"
+            android:paddingLeft="10dp"
+            android:textSize="28dp"
+            android:textColor="#000000"
+            android:hint="Your Status" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/status_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/colorAccent"
+
+        android:text="SAVE CHANGES"
+        android:textColor="#ffffff"
         android:textSize="35dp"
-        android:id="@+id/changestatus"
-        />
+        android:textStyle="normal|italic"
+        android:typeface="serif"
+
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="501dp" />
+
 </RelativeLayout>

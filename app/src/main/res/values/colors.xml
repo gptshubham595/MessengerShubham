@@ -2,10 +2,13 @@
 <resources>
     <color name="colorPrimary">#1a2835</color>
     <color name="colorPrimaryDark">#1a2835</color>
+<color name="colorTextPrimary">#daa52d</color>
+    
+<color name="colorTextDisable">#daa52d</color>
+
     <color name="colorAccent">#1a2835</color>
-    <color name="nav">#1a2835</color>
+   <color name="nav">#1a2835</color>
     <color name="dark">#0a1327</color>
-    <color name="colorTextPrimary">#daa52d</color>
-    <color name="black">#000000</color>
-    <color name="colorTextDisable">#daa52d</color>
+    
+    <color name="darkColor">#222222</color>
 </resources>

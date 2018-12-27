@@ -1,80 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gold"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/gold"
     android:layout_height="match_parent"
-    tools:context="droidmentor.tabwithviewpager.Settings">
+    tools:context="in.tvac.akshaye.lapitchat.SettingsActivity">
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/user"
-        android:layout_marginTop="40dp"
+        android:id="@+id/settings_image"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/pic"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UserName"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="30dp"
-        android:layout_marginTop="210dp"
-        android:layout_centerHorizontal="true"
-        android:typeface="serif"
-        android:textStyle="bold|italic"
-        android:id="@+id/username"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UserStatus"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="20dp"
-        android:layout_marginTop="270dp"
-        android:layout_centerHorizontal="true"
-        android:typeface="serif"
-        android:textStyle="bold|italic"
-        android:id="@+id/userstatus"
-        />
+        android:layout_marginTop="30dp"
+        android:src="@drawable/default_avatar" />
 
     <TextView
+        android:id="@+id/settings_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="20dp"
-        android:layout_marginTop="345dp"
+        android:layout_below="@+id/settings_image"
         android:layout_centerHorizontal="true"
-        android:typeface="serif"
-        android:textStyle="bold|italic"
-        android:id="@+id/email"
-        />
-    <Button
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:text="Change Image"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:textStyle="bold|italic"
-        android:typeface="serif"
-        android:background="@drawable/shape2"
-        android:layout_marginTop="450dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/changeimg"
-        />
+        android:layout_marginTop="30dp"
+        android:text="Display Name"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
 
     <Button
-        android:layout_width="220dp"
+        android:id="@+id/settings_status_btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Status"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:textStyle="bold|italic"
-        android:typeface="serif"
         android:background="@drawable/shape2"
-        android:layout_marginTop="510dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/changestatus"
-        />
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/colorAccent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="CHANGE STATUS"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/settings_image_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/settings_status_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@android:color/white"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:background="@drawable/shape2"
+        android:text="CHANGE IMAGE"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/settings_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Hi there, I\'m using Shubham Messenger App"
+        android:textColor="@android:color/white" />
+
 </RelativeLayout>
