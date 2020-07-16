@@ -1,6 +1,7 @@
 package com.shubham.rollout;
 
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -12,21 +13,19 @@ class SectionsPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
 
         switch (position) {
             case 0:
-                RequestsFragment requestsFragment = new RequestsFragment();
-                return requestsFragment;
+                return new RequestsFragment();
 
             case 1:
-                ChatsFragment chatsFragment = new ChatsFragment();
-                return chatsFragment;
+                return new ChatsFragment();
 
             case 2:
-                FriendsFragment friendsFragment = new FriendsFragment();
-                return friendsFragment;
+                return new FriendsFragment();
 
             default:
                 return null;

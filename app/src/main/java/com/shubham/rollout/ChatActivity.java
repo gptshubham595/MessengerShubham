@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -92,12 +93,13 @@ public class ChatActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
 
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowCustomEnabled(true);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
-        mCurrentUserId = mAuth.getCurrentUser().getUid();
+        mCurrentUserId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
         mChatUser = getIntent().getStringExtra("user_id");
         String userName = getIntent().getStringExtra("user_name");
@@ -176,11 +178,11 @@ public class ChatActivity extends AppCompatActivity {
 
                 if(!dataSnapshot.hasChild(mChatUser)){
 
-                    Map chatAddMap = new HashMap();
+                    Map<String, Object> chatAddMap = new HashMap<>();
                     chatAddMap.put("seen", false);
                     chatAddMap.put("timestamp", ServerValue.TIMESTAMP);
 
-                    Map chatUserMap = new HashMap();
+                    Map<String, Object> chatUserMap = new HashMap<>();
                     chatUserMap.put("Chat/" + mCurrentUserId + "/" + mChatUser, chatAddMap);
                     chatUserMap.put("Chat/" + mChatUser + "/" + mCurrentUserId, chatAddMap);
 
@@ -272,23 +274,24 @@ public class ChatActivity extends AppCompatActivity {
 
             StorageReference filepath = mImageStorage.child("message_images").child( push_id + ".jpg");
 
+            assert imageUri != null;
             filepath.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
 
                     if(task.isSuccessful()){
 
-                        String download_url = task.getResult().getDownloadUrl().toString();
+                        String download_url = Objects.requireNonNull(task.getResult().getDownloadUrl()).toString();
 
 
-                        Map messageMap = new HashMap();
+                        Map<String, Object> messageMap = new HashMap<>();
                         messageMap.put("message", download_url);
                         messageMap.put("seen", false);
                         messageMap.put("type", "image");
                         messageMap.put("time", ServerValue.TIMESTAMP);
                         messageMap.put("from", mCurrentUserId);
 
-                        Map messageUserMap = new HashMap();
+                        Map<String, Object> messageUserMap = new HashMap<>();
                         messageUserMap.put(current_user_ref + "/" + push_id, messageMap);
                         messageUserMap.put(chat_user_ref + "/" + push_id, messageMap);
 
@@ -453,14 +456,14 @@ public class ChatActivity extends AppCompatActivity {
 
             String push_id = user_message_push.getKey();
 
-            Map messageMap = new HashMap();
+            Map<String, Object> messageMap = new HashMap<>();
             messageMap.put("message", message);
             messageMap.put("seen", false);
             messageMap.put("type", "text");
             messageMap.put("time", ServerValue.TIMESTAMP);
             messageMap.put("from", mCurrentUserId);
 
-            Map messageUserMap = new HashMap();
+            Map<String, Object> messageUserMap = new HashMap<>();
             messageUserMap.put(current_user_ref + "/" + push_id, messageMap);
             messageUserMap.put(chat_user_ref + "/" + push_id, messageMap);
 

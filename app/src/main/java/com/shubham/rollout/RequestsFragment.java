@@ -32,6 +32,7 @@ import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -63,7 +64,7 @@ public class RequestsFragment extends Fragment {
         mMainView = inflater.inflate(R.layout.fragment_requests, container, false);
         mReqList = mMainView.findViewById(R.id.req_list);
         mAuth = FirebaseAuth.getInstance();
-        mCurrent_user_id = mAuth.getCurrentUser().getUid();
+        mCurrent_user_id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         friendReqDatabase = FirebaseDatabase.getInstance().getReference().child("Friend_req").child(mCurrent_user_id);
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
         mfriendsDatabase = FirebaseDatabase.getInstance().getReference().child("Friends");
@@ -113,7 +114,7 @@ public class RequestsFragment extends Fragment {
                                             public void onClick(View v) {
                                                 CharSequence[] options = new CharSequence[]{"Cancel Friend Request"};
 
-                                                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                                final AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
 
                                                 builder.setTitle("Friend Options");
                                                 builder.setItems(options, new DialogInterface.OnClickListener() {
@@ -172,7 +173,7 @@ public class RequestsFragment extends Fragment {
                                             public void onClick(View v) {
                                                 CharSequence[] options = new CharSequence[]{"Accept Friend Request", "Cancel Friend Request"};
 
-                                                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                                final AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
 
                                                 builder.setTitle("Friend Options");
                                                 builder.setItems(options, new DialogInterface.OnClickListener() {

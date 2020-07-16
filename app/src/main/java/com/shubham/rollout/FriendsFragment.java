@@ -24,6 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -33,12 +35,6 @@ public class FriendsFragment extends Fragment {
 
     private DatabaseReference mFriendsDatabase;
     private DatabaseReference mUsersDatabase;
-
-    private FirebaseAuth mAuth;
-
-    private String mCurrent_user_id;
-
-    private View mMainView;
 
 
     public FriendsFragment() {
@@ -50,12 +46,12 @@ public class FriendsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        mMainView = inflater.inflate(R.layout.fragment_friends, container, false);
+        View mMainView = inflater.inflate(R.layout.fragment_friends, container, false);
 
         mFriendsList = (RecyclerView) mMainView.findViewById(R.id.friends_list);
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        mCurrent_user_id = mAuth.getCurrentUser().getUid();
+        String mCurrent_user_id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
         mFriendsDatabase = FirebaseDatabase.getInstance().getReference().child("Friends").child(mCurrent_user_id);
         mFriendsDatabase.keepSynced(true);
@@ -114,7 +110,7 @@ public class FriendsFragment extends Fragment {
 
                                 CharSequence[] options = new CharSequence[]{"Open Profile", "Send message"};
 
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
 
                                 builder.setTitle("Select Options");
                                 builder.setItems(options, new DialogInterface.OnClickListener() {

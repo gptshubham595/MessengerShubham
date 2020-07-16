@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -30,7 +32,6 @@ public class UsersActivity extends AppCompatActivity {
 
     private RecyclerView mUsersList;
     private EditText searchinput;
-    private ImageButton searchbtn;
     private DatabaseReference mUsersDatabase;
 
     private LinearLayoutManager mLayoutManager;
@@ -43,10 +44,10 @@ public class UsersActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.users_appBar);
         setSupportActionBar(mToolbar);
 
-        getSupportActionBar().setTitle("Find Users");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Find Users");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        searchbtn = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton searchbtn = (ImageButton) findViewById(R.id.imageButton);
         searchinput = findViewById(R.id.search);
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users");

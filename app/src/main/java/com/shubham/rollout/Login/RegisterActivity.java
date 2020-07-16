@@ -25,6 +25,7 @@ import com.shubham.rollout.R;
 import com.shubham.rollout.StartActivity;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -52,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         //Toolbar Set
         mToolbar = (Toolbar) findViewById(R.id.register_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Create Account");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Create Account");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -76,9 +77,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String display_name = mDisplayName.getEditText().getText().toString();
-                String email = mEmail.getEditText().getText().toString();
-                String password = mPassword.getEditText().getText().toString();
+                String display_name = Objects.requireNonNull(mDisplayName.getEditText()).getText().toString();
+                String email = Objects.requireNonNull(mEmail.getEditText()).getText().toString();
+                String password = Objects.requireNonNull(mPassword.getEditText()).getText().toString();
 
                 if (!TextUtils.isEmpty(display_name) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
 
@@ -108,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                     FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+                    assert current_user != null;
                     String uid = current_user.getUid();
 
                     mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);

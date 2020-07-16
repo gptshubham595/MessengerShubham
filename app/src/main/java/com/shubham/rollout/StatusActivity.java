@@ -19,18 +19,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class StatusActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
-
     private TextInputLayout mStatus;
-    private Button mSavebtn;
-
 
     //Firebase
     private DatabaseReference mStatusDatabase;
-    private FirebaseUser mCurrentUser;
-
 
     //Progress
     private ProgressDialog mProgress;
@@ -41,23 +37,24 @@ public class StatusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status);
 
         //Firebase
-        mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        assert mCurrentUser != null;
         String current_uid = mCurrentUser.getUid();
 
         mStatusDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_uid);
 
-        mToolbar = (Toolbar) findViewById(R.id.status_appBar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.status_appBar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Account Status");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Account Status");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         String status_value = getIntent().getStringExtra("status_value");
 
         mStatus = (TextInputLayout) findViewById(R.id.status_input);
-        mSavebtn = (Button) findViewById(R.id.status_save_btn);
+        Button mSavebtn = (Button) findViewById(R.id.status_save_btn);
 
-        mStatus.getEditText().setText(status_value);
+        Objects.requireNonNull(mStatus.getEditText()).setText(status_value);
 
         mSavebtn.setOnClickListener(new View.OnClickListener() {
             @Override

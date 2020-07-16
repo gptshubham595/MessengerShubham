@@ -12,6 +12,7 @@
         android:layout_height="350dp"
         android:layout_above="@id/textView"
         android:layout_centerHorizontal="true"
+        android:contentDescription="@string/icon"
         android:src="@drawable/sp" />
 
     <TextView
@@ -21,7 +22,7 @@
         android:layout_above="@+id/start_login_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:text="Welcome to Shubham's \n Messenger App"
+        android:text="@string/welcome_to_shubham_s_n_messenger_app"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="22sp"
@@ -36,8 +37,8 @@
         android:layout_marginBottom="50dp"
         android:background="@drawable/shape4"
         android:textSize="20sp"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
         android:text="@string/need_a_new_account"
         android:textColor="@color/colorPrimary" />
 
@@ -49,10 +50,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/colorAccent"
-        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:background="@drawable/shape2"
         android:textSize="20sp"
         android:paddingRight="20dp"
-        android:text="ALREADY HAVE ACCOUNT"
+        android:text="@string/already_have_account"
         android:textColor="@android:color/white" />
 </RelativeLayout>

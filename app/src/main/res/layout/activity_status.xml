@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffffff"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.shubham.rollout.StatusActivity">
+    android:background="#ffffff"
+    tools:context=".StatusActivity">
 
     <include
         android:id="@+id/status_appBar"
@@ -19,19 +19,22 @@
         android:layout_below="@+id/status_appBar"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:background="@drawable/shape4"
-            android:textStyle="italic"
-            android:paddingLeft="10dp"
-            android:textSize="28dp"
+            android:autofillHints="@string/hi"
+            android:hint="@string/your_status"
+            android:inputType="textMultiLine"
             android:textColor="#000000"
-            android:hint="Your Status" />
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="28sp"
+            android:textStyle="italic" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -39,18 +42,16 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/colorAccent"
-
-        android:text="SAVE CHANGES"
+        android:text="@string/save_changes"
         android:textColor="#ffffff"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="normal|italic"
         android:typeface="serif"
-
         tools:layout_editor_absoluteX="7dp"
         tools:layout_editor_absoluteY="501dp" />
 

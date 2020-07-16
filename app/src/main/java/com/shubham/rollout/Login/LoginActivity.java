@@ -24,15 +24,13 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.shubham.rollout.MainActivity;
 import com.shubham.rollout.R;
 
-public class LoginActivity extends AppCompatActivity {
+import java.util.Objects;
 
-    private Toolbar mToolbar;
+public class LoginActivity extends AppCompatActivity {
 
     private TextInputLayout mLoginEmail;
     private TextInputLayout mLoginPassword;
 
-    private Button mLogin_btn;
-    private Button forgot;
     private ProgressDialog mLoginProgress;
 
     private FirebaseAuth mAuth;
@@ -47,9 +45,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mToolbar = (Toolbar) findViewById(R.id.login_toolbar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.login_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Login");
 
 
@@ -60,8 +58,8 @@ public class LoginActivity extends AppCompatActivity {
 
         mLoginEmail = (TextInputLayout) findViewById(R.id.login_email);
         mLoginPassword = (TextInputLayout) findViewById(R.id.login_password);
-        mLogin_btn = (Button) findViewById(R.id.login_btn);
-        forgot = findViewById(R.id.forgotbtn);
+        Button mLogin_btn = (Button) findViewById(R.id.login_btn);
+        Button forgot = findViewById(R.id.forgotbtn);
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,8 +72,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = mLoginEmail.getEditText().getText().toString();
-                String password = mLoginPassword.getEditText().getText().toString();
+                String email = Objects.requireNonNull(mLoginEmail.getEditText()).getText().toString();
+                String password = Objects.requireNonNull(mLoginPassword.getEditText()).getText().toString();
 
                 if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)) {
 
@@ -106,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     mLoginProgress.dismiss();
 
-                    String current_user_id = mAuth.getCurrentUser().getUid();
+                    String current_user_id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                     String deviceToken = FirebaseInstanceId.getInstance().getToken();
 
                     mUserDatabase.child(current_user_id).child("device_token").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -130,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     mLoginProgress.hide();
 
-                    String task_result = task.getException().getMessage();
+                    String task_result = Objects.requireNonNull(task.getException()).getMessage();
 
                     Toast.makeText(LoginActivity.this, "Error : " + task_result, Toast.LENGTH_LONG).show();
 

@@ -25,6 +25,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -36,12 +38,6 @@ public class ChatsFragment extends Fragment {
     private DatabaseReference mMessageDatabase;
     private DatabaseReference mUsersDatabase;
 
-    private FirebaseAuth mAuth;
-
-    private String mCurrent_user_id;
-
-    private View mMainView;
-
 
     public ChatsFragment() {
         // Required empty public constructor
@@ -52,12 +48,12 @@ public class ChatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        mMainView = inflater.inflate(R.layout.fragment_chats, container, false);
+        View mMainView = inflater.inflate(R.layout.fragment_chats, container, false);
 
         mConvList = (RecyclerView) mMainView.findViewById(R.id.conv_list);
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        mCurrent_user_id = mAuth.getCurrentUser().getUid();
+        String mCurrent_user_id = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
         mConvDatabase = FirebaseDatabase.getInstance().getReference().child("Chat").child(mCurrent_user_id);
 

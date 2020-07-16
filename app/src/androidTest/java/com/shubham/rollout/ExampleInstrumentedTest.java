@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.shubham.lapitchat;", appContext.getPackageName());
+        assertEquals("com.shubham.rollout;", appContext.getPackageName());
     }
 }

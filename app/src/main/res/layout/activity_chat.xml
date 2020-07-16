@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/linearLayout"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/chat_app_bar"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_below="@+id/chat_app_bar" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -47,6 +47,7 @@
             android:alpha="0.5"
             android:background="@android:color/white"
             android:padding="10dp"
+            android:contentDescription="@string/todo"
             app:srcCompat="@drawable/ic_add_black_24dp" />
 
         <EditText
@@ -56,12 +57,13 @@
             android:layout_weight="8"
             android:background="@android:color/white"
             android:ems="10"
-            android:hint="Enter Message..."
+            android:autofillHints=""
             android:inputType="textPersonName"
             android:paddingBottom="12dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="14dp" />
+            android:hint="@string/enter_message"
+            android:paddingStart="10dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="10dp" />
 
         <ImageButton
             android:id="@+id/chat_send_btn"
@@ -71,6 +73,7 @@
             android:alpha="0.5"
             android:background="@android:color/white"
             android:padding="10dp"
+            android:contentDescription="@string/todo"
             app:srcCompat="@drawable/ic_send_black_24dp" />
     </LinearLayout>
 

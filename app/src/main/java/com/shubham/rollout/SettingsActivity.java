@@ -35,6 +35,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -52,9 +53,6 @@ public class SettingsActivity extends AppCompatActivity {
     private CircleImageView mDisplayImage;
     private TextView mName;
     private TextView mStatus;
-
-    private Button mStatusBtn;
-    private Button mImageBtn;
 
 
     private static final int GALLERY_PICK = 1;
@@ -86,13 +84,14 @@ public class SettingsActivity extends AppCompatActivity {
         mName = (TextView) findViewById(R.id.settings_name);
         mStatus = (TextView) findViewById(R.id.settings_status);
 
-        mStatusBtn = (Button) findViewById(R.id.settings_status_btn);
-        mImageBtn = (Button) findViewById(R.id.settings_image_btn);
+        Button mStatusBtn = (Button) findViewById(R.id.settings_status_btn);
+        Button mImageBtn = (Button) findViewById(R.id.settings_image_btn);
 
         mImageStorage = FirebaseStorage.getInstance().getReference();
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        assert mCurrentUser != null;
         String current_uid = mCurrentUser.getUid();
 
 
@@ -214,7 +213,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 Uri resultUri = result.getUri();
 
-                File thumb_filePath = new File(resultUri.getPath());
+                File thumb_filePath = new File(Objects.requireNonNull(resultUri.getPath()));
 
                 String current_user_id = mCurrentUser.getUid();
 
@@ -231,7 +230,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
 
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                thumb_bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                Objects.requireNonNull(thumb_bitmap).compress(Bitmap.CompressFormat.JPEG, 100, baos);
                 final byte[] thumb_byte = baos.toByteArray();
 
 
@@ -245,18 +244,18 @@ public class SettingsActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
 
-                            final String download_url = task.getResult().getDownloadUrl().toString();
+                            final String download_url = Objects.requireNonNull(task.getResult().getDownloadUrl()).toString();
 
                             UploadTask uploadTask = thumb_filepath.putBytes(thumb_byte);
                             uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> thumb_task) {
 
-                                    String thumb_downloadUrl = thumb_task.getResult().getDownloadUrl().toString();
+                                    String thumb_downloadUrl = Objects.requireNonNull(thumb_task.getResult().getDownloadUrl()).toString();
 
                                     if (thumb_task.isSuccessful()) {
 
-                                        Map update_hashMap = new HashMap();
+                                        Map<String, Object> update_hashMap = new HashMap<>();
                                         update_hashMap.put("image", download_url);
                                         update_hashMap.put("thumb_image", thumb_downloadUrl);
 

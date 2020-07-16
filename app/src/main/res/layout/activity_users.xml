@@ -16,30 +16,31 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_margin="8dp"
-        android:layout_below="@id/search"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_below="@id/search" />
 
     <TextView
         android:id="@+id/sea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
-        android:paddingLeft="8dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/search_for_people_and_friends_here"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="67dp"
         android:ems="10"
-        android:text="Search for people and friends here"
-         />
+        android:textSize="18sp" />
 
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search Here"
+            android:autofillHints=""
             android:inputType="textMultiLine"
             android:id="@+id/search"
             android:layout_below="@id/sea"
             android:layout_toStartOf="@id/imageButton"
+            android:hint="@string/search_here"
             android:textColor="#000000" />
 
 
@@ -51,6 +52,7 @@
         android:layout_alignEnd="@+id/users_list"
         android:padding="8dp"
         android:background="@drawable/shape"
+        android:contentDescription="@string/todo"
         app:srcCompat="@android:drawable/ic_menu_search" />
 
 </RelativeLayout>

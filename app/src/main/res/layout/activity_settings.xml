@@ -22,7 +22,7 @@
         android:layout_below="@+id/settings_image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Display Name"
+        android:text="@string/display_name"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
 
@@ -35,9 +35,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/colorAccent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="CHANGE STATUS"
+        android:paddingStart="20dp"
+        android:paddingEnd="10dp"
+        android:text="@string/change_status"
         android:textColor="@android:color/white" />
 
     <Button
@@ -48,10 +48,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@android:color/white"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="10dp"
         android:background="@drawable/shape2"
-        android:text="CHANGE IMAGE"
+        android:text="@string/change_image"
         android:textColor="@color/colorPrimary" />
 
     <TextView
@@ -61,7 +61,7 @@
         android:layout_below="@+id/settings_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="Hi there, I\'m using Shubham Messenger App"
+        android:text="@string/hi_there_i_m_using_shubham_messenger_app"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

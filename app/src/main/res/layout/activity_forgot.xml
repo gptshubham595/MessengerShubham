@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="120dp"
-        android:paddingLeft="10dp"
-        android:text="Type your Email Below:"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/type_your_email_below"
         android:textColor="@color/colorAccent"
         android:textSize="28sp"
 
@@ -24,8 +25,9 @@
         android:layout_height="50dp"
         android:layout_below="@id/typeemail"
         android:layout_marginTop="10dp"
-        android:hint="Email"
-        android:paddingLeft="10dp"
+        android:hint="@string/email"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:textSize="28sp" />
 
     <Button

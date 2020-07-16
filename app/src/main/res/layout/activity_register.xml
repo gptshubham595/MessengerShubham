@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/sp"
+        android:contentDescription="@string/todo"
         app:layout_constraintTop_toBottomOf="@+id/login_label" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -42,9 +43,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape4"
             android:hint="@string/display_name"
-            android:paddingLeft="10dp"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
             android:textSize="28sp"
             android:textStyle="italic"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:typeface="serif" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,9 +69,11 @@
             android:background="@drawable/shape4"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:paddingLeft="10dp"
+            android:autofillHints=""
+            android:paddingStart="10dp"
             android:textSize="28sp"
             android:textStyle="italic"
+            android:paddingEnd="10dp"
             android:typeface="serif" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,12 +95,14 @@
             android:background="@drawable/shape4"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:paddingLeft="10dp"
+            android:importantForAutofill="no"
+            android:paddingStart="10dp"
             android:textSize="28sp"
             android:textStyle="italic"
+            android:paddingEnd="10dp"
             android:typeface="serif" />
     </com.google.android.material.textfield.TextInputLayout>
-    >
+
 
     <Button
         android:id="@+id/reg_create_btn"
@@ -106,7 +114,7 @@
         android:layout_marginTop="30dp"
         android:text="@string/create_account"
         android:textColor="#ffffff"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="normal|italic"
         android:typeface="serif"
         app:layout_constraintTop_toBottomOf="@+id/reg_password"/>

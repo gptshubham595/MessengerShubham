@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +25,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
 
     private List<Messages> mMessageList;
-    private DatabaseReference mUserDatabase;
 
     public MessageAdapter(List<Messages> mMessageList) {
 
@@ -32,6 +32,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     }
 
+    @NonNull
     @Override
     public MessageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -42,26 +43,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     }
 
-    public class MessageViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView messageText;
-        public CircleImageView profileImage;
-        public TextView displayName;
-        public ImageView messageImage;
-
-        public MessageViewHolder(View view) {
-            super(view);
-
-            messageText = (TextView) view.findViewById(R.id.message_text_layout);
-            profileImage = (CircleImageView) view.findViewById(R.id.message_profile_layout);
-            displayName = (TextView) view.findViewById(R.id.name_text_layout);
-            messageImage = (ImageView) view.findViewById(R.id.message_image_layout);
-
-        }
-    }
-
     @Override
-    public void onBindViewHolder(final MessageViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final MessageViewHolder viewHolder, int i) {
 
         Messages c = mMessageList.get(i);
 
@@ -69,7 +52,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         String message_type = c.getType();
 
 
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(from_user);
+        DatabaseReference mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(from_user);
 
         mUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -105,6 +88,24 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         }
 
+    }
+
+    public static class MessageViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView messageText;
+        public CircleImageView profileImage;
+        public TextView displayName;
+        public ImageView messageImage;
+
+        public MessageViewHolder(View view) {
+            super(view);
+
+            messageText = (TextView) view.findViewById(R.id.message_text_layout);
+            profileImage = (CircleImageView) view.findViewById(R.id.message_profile_layout);
+            displayName = (TextView) view.findViewById(R.id.name_text_layout);
+            messageImage = (ImageView) view.findViewById(R.id.message_image_layout);
+
+        }
     }
 
     @Override
