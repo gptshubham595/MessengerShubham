@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:background="@drawable/gold"    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
-    tools:context="in.tvac.akshaye.lapitchat.ProfileActivity">
+
+    tools:context="com.shubham.rollout.ProfileActivity">
 
     <ImageView
         android:id="@+id/profile_image"

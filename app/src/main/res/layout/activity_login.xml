@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:background="@drawable/gold"    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gold"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.tvac.akshaye.lapitchat.LoginActivity">
+    tools:context="com.shubham.rollout.Login.LoginActivity">
 
     <include
         android:id="@+id/login_toolbar"
@@ -50,7 +51,7 @@ android:background="@drawable/gold"    xmlns:app="http://schemas.android.com/apk
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_toolbar" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -75,9 +76,10 @@ android:background="@drawable/gold"    xmlns:app="http://schemas.android.com/apk
             android:textSize="28sp"
             android:textStyle="italic"
             android:typeface="serif" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+    >
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_password"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -101,7 +103,9 @@ android:background="@drawable/gold"    xmlns:app="http://schemas.android.com/apk
             android:hint="Password"
             android:inputType="textPassword"
             android:textColor="#000000" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+    >
+
     <Button
         android:id="@+id/forgotbtn"
         android:layout_width="match_parent"
@@ -116,4 +120,4 @@ android:background="@drawable/gold"    xmlns:app="http://schemas.android.com/apk
         android:typeface="serif"
         app:layout_constraintTop_toBottomOf="@+id/login_btn" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

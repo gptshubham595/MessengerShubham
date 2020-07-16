@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.tvac.akshaye.lapitchat">
+    package="com.shubham.rollout">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".LapitChat"
+        android:name=".RollOutChat"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label= "@string/app_name"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".FirebaseMessagingService">
+        <service android:name="com.shubham.rollout.FirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity
-            android:name=".Welcome">
+        <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,8 +27,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />        
-<activity android:name=".StartActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".StartActivity" />
 
         <activity
             android:label="About"
@@ -37,12 +36,12 @@
 
         <activity
             android:label="Forgot_Password"
-            android:name=".ForgotPassword" />
+            android:name=".Login.ForgotPassword" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Login.RegisterActivity"
             android:parentActivityName=".StartActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login.LoginActivity"
             android:parentActivityName=".StartActivity" />
         <activity android:name=".SettingsActivity" />
         <activity
@@ -61,8 +60,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".ChatActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

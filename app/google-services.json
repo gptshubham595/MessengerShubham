@@ -33,20 +33,50 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159883136637:android:7f82426afdc1a304816b14",
+        "android_client_info": {
+          "package_name": "com.shubham.rollout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159883136637-20vajbrjaslvq3qilng5tau5dh9lk67d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shubham.rollout",
+            "certificate_hash": "0c45cdaaafe960ff60601c538788c8d31c46a216"
+          }
         },
-        "ads_service": {
-          "status": 2
+        {
+          "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOIOp4BRbh520oYPQsmecMETkGCoQru_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     },
@@ -77,20 +107,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -121,20 +144,71 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159883136637:android:117e41afe3c8aa06",
+        "android_client_info": {
+          "package_name": "my.shubham.messenger.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOIOp4BRbh520oYPQsmecMETkGCoQru_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159883136637:android:f006b285803c3127",
+        "android_client_info": {
+          "package_name": "my.shubham.messenger.chatme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOIOp4BRbh520oYPQsmecMETkGCoQru_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159883136637-13c72v8vlv29k05dbt3lktutd832p34s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
