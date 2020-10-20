@@ -14,13 +14,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shubham_kr_gupta"
+        android:text="Developer! Shubham Kumar Gupta"
         android:textColor="@color/colorTextPrimary"
         android:textSize="30sp"
         android:layout_marginTop="220dp"
         android:layout_centerHorizontal="true"
         android:typeface="serif"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:id="@+id/username"
         />
     <TextView
@@ -50,7 +50,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/my_app"
+        android:text="Thank You for using my app!! Cheers"
         android:textColor="@color/colorTextPrimary"
         android:textSize="28sp"
         android:layout_marginTop="420dp"
