@@ -1,1 +1,2 @@
-A Nice Android Project
+# Android JAVA Project
+based on firebase authentication
